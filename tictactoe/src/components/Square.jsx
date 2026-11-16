@@ -4,5 +4,5 @@ const squareStyle ={
 }
 
 export default function Square(props){
-    return <button style={squareStyle} onClick={props.boardClixk()}>{props.value}</button>
+    return <button style={squareStyle} onClick={props.boardClixk(props.rowIndex, props.columnIndex)}>{props.value}</button>
 }
