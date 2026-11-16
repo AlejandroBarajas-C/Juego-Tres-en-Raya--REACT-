@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Board from './components/Board';
 import Reset from './components/Reset';
@@ -17,6 +17,17 @@ function App() {
     ["-", "-", "-"]
   ]);
   const [moves, setMoves] = useState(0);
+
+  useEffect(()=>{
+    async function fetchDara() {
+      const res = await fetch("https://api.nponit.io/c734e05e43c5b87dd971");
+      const myjson = await res.json();
+      console.log(myjson);
+      setTurn(myjson.turn);
+      setValues(myjson.values);
+      setMoves(myjson.moves);
+    }
+  }, [])
 
   function appClick(rowNumber, columnNumber){
     console.log("Click en " + rowNumber + columnNumber);
