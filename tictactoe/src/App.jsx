@@ -16,11 +16,15 @@ function App() {
     ["-", "-", "-"]
   ]);
 
+  function appClick(rowNumber, columnNumber){
+    console.log("Click en " + rowNumber + columnNumber)
+  }
+
   return (
     <div className="App">
       <h2>TicTacToe</h2>
       <Header turn={turn}/>
-      <Board values={values}/>
+      <Board values={values} appClick={appClick}/>
     </div>
   );
 }
