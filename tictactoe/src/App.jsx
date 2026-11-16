@@ -1,8 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
 import { useState } from 'react';
-import Header from './Header';
-import Board from './Board';
+import Header from './components/Header';
+import Board from './components/Board';
 
 const PLAYERX = "Player 1 - Xs";
 const PLAYER0 = "Player 2 - 0s"
